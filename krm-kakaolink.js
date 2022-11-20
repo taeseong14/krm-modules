@@ -17,8 +17,8 @@ module.exports = function (email, pw, apikey, url) {
         keepLogin: true,
     }).then(e => {
         Kakao.login(e, {
-            apiKey: 'apiKey',
-            url: 'url'
+            apiKey: apikey,
+            url: url
         });
     }).catch(e => {
         throw e;
