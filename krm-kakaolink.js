@@ -22,10 +22,10 @@ module.exports = function (email, pw, apikey, url) {
         });
         return function (msg, reply, next) {
             reply.kakaolink = function (template_id, template_args, room) {
-                Kakao.sendLink(room || msg.room, {
+                return Kakao.sendLink(room || msg.room, {
                     template_id: template_id,
                     template_args: template_args
-                });
+                }, 'custom');
             }
             next();
         }
